@@ -34,6 +34,11 @@ const showAISummary = computed(() =>
     isPageReady.value && (pageConfigs.value?.config?.WEB_AI_SUMMARY ?? true)
 );
 
+// ===== 音乐卡片跳转方法 =====
+const openMusicPage = () => {
+  window.open('https://yourspotify.shimmerl.top:12998/?gname=Last+day&amp;token=52839df5-892d-4b42-b4ba-a42a777ce5d6')
+};
+
 const serverTzOffset = computed(() =>
     pageConfigs.value?.tzOffset ?? 8
 );
@@ -133,6 +138,21 @@ onMounted(async () => {
                 v-model:selected-device="selectedDevice"
                 @refresh-devices="fetchDevices"
             />
+
+
+            <div class="my-4 bg-white rounded-lg not-dark:shadow-md p-4 dark:bg-[#181a1b]">
+            <!-- 音乐天地标题（粗体样式统一，无语法错误） -->
+            <div class="item-headline-music flex items-center gap-2 mb-3 font-bold text-gray-800 dark:text-gray-200 text-base">
+              <i class="haofont hao-icon-music"></i>
+              <span>音乐天地</span>
+              </div>
+
+              <!-- 简化后的音乐卡片（无翻转容器，仅单个背景图） -->
+              <div class="card-widget card-music cursor-pointer" @click="openMusicPage">
+                <!-- 仅保留单个正面背景图，删除翻转和背面相关内容 -->
+                <div class="msimg w-full rounded-lg" style="background:url(https://spotify.shimmerl.top:3000/api?user=9uj82h9nbmtxex14xy22ndxnz&amp;unique=true&amp;count=6) center center/100% no-repeat; padding-top: 100%;"></div>
+              </div>
+            </div>
 
             <!-- 日期筛选组件 -->
             <Transition name="slide-fade">
