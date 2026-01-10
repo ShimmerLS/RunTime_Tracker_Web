@@ -150,7 +150,7 @@ onMounted(async () => {
 
 <steamCard
   title="Steam 卡片"
-  cover-url="https://card.yuy1n.io/card/76561199158084638/radical,en,badge,group,bg-game"
+  cover-url="https://card.yuy1n.io/card/76561199158084638/radical,zh,badge,group,bg-game"
   link="https://steamcommunity.com/id/ShimmerLS/"
 />
 
